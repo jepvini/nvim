@@ -22,7 +22,7 @@ return {
         },
         clang_format = {
           command = "clang-format",
-          prepend_args = { "--style", "file:/home/leo/.config/nvim/clang/clang-format" },
+          prepend_args = { "--style", "file:/home/leo/.config/nvim/others/clang-format" },
         },
         stylua = {
           command = "stylua",
