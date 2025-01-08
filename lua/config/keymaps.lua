@@ -59,3 +59,7 @@ vim.keymap.set("v", "<Down>", "<nop>")
 -- Toggle first letter of word upper case or lower case
 vim.keymap.set("n", "<leader>U", "viWo<esc>vU")
 vim.keymap.set("n", "<leader>u", "viWo<esc>vu")
+
+-- Toggle file executbale
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>X", "<cmd>!chmod -x %<CR>", { silent = true })

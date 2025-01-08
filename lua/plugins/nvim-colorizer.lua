@@ -2,7 +2,8 @@ return {
   {
     "norcalli/nvim-colorizer.lua",
     cmd = { "ColorizerAttachToBuffer", "ColorizerReloadAllBuffers", "ColorizerToggle" },
-        opts = {
+    ft = { "lua", "css", "scss" },
+    opts = {
       lua = {
         names = false,
       },
