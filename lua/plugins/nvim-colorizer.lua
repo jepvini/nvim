@@ -1,6 +1,7 @@
 return {
   {
     "norcalli/nvim-colorizer.lua",
+    event = "VeryLazy",
     cmd = { "ColorizerAttachToBuffer", "ColorizerReloadAllBuffers", "ColorizerToggle" },
     ft = { "lua", "css", "scss" },
     opts = {

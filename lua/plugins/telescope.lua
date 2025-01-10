@@ -13,7 +13,7 @@ return {
         { "<leader>R", "<cmd>Telescope registers<CR>", desc = "search in regosters" },
         { "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "search in home" },
         { "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "rg in current dir" },
-        { "<leader>fs", "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "search in current buffer" },
+        -- { "<leader>fs", "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "search in current buffer" },
         { "<leader>r", "<cmd>Telescope oldfiles<CR>", desc = "search in buffer" },
       }
     end,
