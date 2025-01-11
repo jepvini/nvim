@@ -144,6 +144,7 @@ return {
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
         on_attach = on_attach,
+        single_file_support = true,
         settings = {
           Lua = {
             diagnostics = {

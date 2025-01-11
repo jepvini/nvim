@@ -17,12 +17,13 @@ local colors = {
   white_b = "#e4e4e4",
 }
 
-vim.cmd.colorscheme("kanagawa")
+-- vim.cmd.colorscheme("kanagawa")
+vim.cmd([[colorscheme tokyonight]])
 --
 -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
-vim.api.nvim_set_hl(0, "LineNr", { fg = colors.yellow })
+-- vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "LineNr", { fg = colors.yellow })
 
 lua_line_theme = {
   normal = {
