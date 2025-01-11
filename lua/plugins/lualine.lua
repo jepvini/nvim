@@ -7,9 +7,9 @@ return {
       options = {
         theme = {
           normal = {
-            a = { bg = "#cba6f7", fg = "#000000", gui = "bold" },
-            b = { bg = "#000000", fg = "#cba6f7" },
-            c = { bg = "#000000", fg = "#cba6f7" },
+            a = { bg = "#af5fd7", fg = "#000000", gui = "bold" },
+            b = { bg = "#000000", fg = "#af5fd7" },
+            c = { bg = "#000000", fg = "#af5fd7" },
           },
           insert = {
             a = { bg = "#89b4fa", fg = "#000000", gui = "bold" },
@@ -32,9 +32,9 @@ return {
             c = { bg = "#000000", fg = "#a6e3a1" },
           },
           inactive = {
-            a = { bg = "#6c7086", fg = "#cba6f7", gui = "bold" },
-            b = { bg = "#000000", fg = "#cba6f7" },
-            c = { bg = "#000000", fg = "#cba6f7" },
+            a = { bg = "#6c7086", fg = "#af5fd7", gui = "bold" },
+            b = { bg = "#000000", fg = "#af5fd7" },
+            c = { bg = "#000000", fg = "#af5fd7" },
           },
         },
         icons_enabled = true,
