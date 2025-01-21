@@ -3,9 +3,8 @@
 int
 leap_year(int year)
 {
-  if (year % 4 == 0 && year % 400 != 0)
-    return 1;
-  return 0;
+  if (year % 4) return 0;
+  return 1;
 }
 
 int
@@ -40,8 +39,7 @@ monthtifier(int days, char *month, unsigned leap)
     }
   }
   days -= 28;
-  if (leap)
-    days--;
+  if (leap) days--;
   if (days <= 31) {
     month[0] = 'm';
     month[1] = 'a';
@@ -136,10 +134,10 @@ int
 main()
 {
   unsigned years, days, hours, minutes;
-  unsigned year = 1970;
-  // unsigned seconds = 0x7FFFFFFE;
-  unsigned seconds = 1725810693;
-  unsigned leap    = 0;
+  unsigned year    = 1970;
+  unsigned seconds = 0x7FFFFFFE;
+  // unsigned seconds = 1725810693;
+  unsigned leap = 0;
 
   char month[4];
 

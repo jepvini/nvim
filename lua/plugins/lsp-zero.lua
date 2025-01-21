@@ -8,65 +8,75 @@ return {
       "hrsh7th/cmp-path",
       "onsails/lspkind.nvim",
       "uga-rosa/cmp-dictionary",
+      {
+        "L3MON4D3/LuaSnip",
+        dependencies = { "rafamadriz/friendly-snippets" },
+      },
+      "saadparwaiz1/cmp_luasnip",
     },
     config = function()
+      require("luasnip.loaders.from_vscode").lazy_load()
       local cmp = require("cmp")
       local lspkind = require("lspkind")
-      -- local luasnip = require("luasnip")
+      local luasnip = require("luasnip")
       require("cmp_dictionary").setup({
         paths = { "/home/leo/.config/nvim/others/en.dict" },
         exact_length = 4,
         first_case_insensitive = true,
       })
 
-      local has_words_before = function()
-        unpack = unpack or table.unpack
-        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-      end
-
       cmp.setup({
         sources = {
           { name = "nvim_lsp" },
+          { name = "luasnip" },
           { name = "buffer" },
           { name = "path" },
           {
             name = "dictionary",
-            keyword_length = 4,
           },
         },
         mapping = cmp.mapping.preset.insert({
-          ["<S-CR>"] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Insert,
-            select = true,
-          }),
-
-          ["<Tab>"] = function(fallback)
-            if not cmp.select_next_item() then
-              if vim.bo.buftype ~= "prompt" and has_words_before() then
-                cmp.complete()
+          ["<S-CR>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              if luasnip.expandable() then
+                luasnip.expand()
               else
-                fallback()
+                cmp.confirm({
+                  select = true,
+                })
               end
+            else
+              fallback()
             end
-          end,
+          end),
+          ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            elseif luasnip.locally_jumpable(1) then
+              luasnip.jump(1)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
 
-          ["<S-Tab>"] = function(fallback)
-            if not cmp.select_prev_item() then
-              if vim.bo.buftype ~= "prompt" and has_words_before() then
-                cmp.complete()
-              else
-                fallback()
-              end
+          ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif luasnip.locally_jumpable(-1) then
+              luasnip.jump(-1)
+            else
+              fallback()
             end
-          end,
+          end, { "i", "s" }),
+
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<C-u>"] = cmp.mapping.scroll_docs(-4),
           ["<C-d>"] = cmp.mapping.scroll_docs(4),
         }),
         snippet = {
           expand = function(args)
-            vim.snippet.expand(args.body)
+            -- vim.snippet.expand(args.body)
+            require("luasnip").lsp_expand(args.body)
           end,
         },
         formatting = {

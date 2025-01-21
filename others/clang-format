@@ -8,6 +8,7 @@ AlignConsecutiveAssignments: Consecutive
 AlignConsecutiveMacros: Consecutive
 AlignOperands: Align
 AlignTrailingComments: true
+IndentPPDirectives: BeforeHash
 # On line
 AllowShortIfStatementsOnASingleLine: WithoutElse
 KeepEmptyLinesAtTheStartOfBlocks: false
