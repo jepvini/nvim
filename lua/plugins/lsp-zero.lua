@@ -20,7 +20,7 @@ return {
       local lspkind = require("lspkind")
       local luasnip = require("luasnip")
       require("cmp_dictionary").setup({
-        paths = { "/home/leo/.config/nvim/others/en.dict" },
+        paths = { "~/.config/nvim/others/en.dict" },
         exact_length = 4,
         first_case_insensitive = true,
       })
