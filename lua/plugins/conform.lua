@@ -35,7 +35,7 @@ return {
         cpp = { "clang_format" },
         json = { "jq" },
         lua = { "stylua" },
-        md = { "mdformat" },
+        markdown = { "mdformat" },
         nix = { "alejandra" },
         python = { "isort", "black" },
         sh = { "beautysh" },
