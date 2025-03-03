@@ -150,6 +150,7 @@ return {
       lspconfig.clangd.setup({
         capabilities = capabilities,
         on_attach = on_attach,
+        cmd = { "clangd", "--query-driver=**" },
       })
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
