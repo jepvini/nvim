@@ -60,6 +60,8 @@ vim.keymap.set("v", "<Down>", "<nop>")
 vim.keymap.set("n", "<leader>U", "viWo<esc>vU")
 vim.keymap.set("n", "<leader>u", "viWo<esc>vu")
 
--- Toggle file executbale
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-vim.keymap.set("n", "<leader>X", "<cmd>!chmod -x %<CR>", { silent = true })
+-- Persistence
+vim.keymap.set("n", "<leader>ws", function() require("persistence").load() end)
+vim.keymap.set("n", "<leader>we", function() require("persistence").select() end)
+vim.keymap.set("n", "<leader>ww", function() require("persistence").load({ last = true }) end)
+vim.keymap.set("n", "<leader>wd", function() require("persistence").stop() end)
