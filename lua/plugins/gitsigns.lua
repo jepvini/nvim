@@ -74,7 +74,7 @@ return {
       map("n", "<leader>oQ", function()
         gitsigns.setqflist("all")
       end)
-      map("n", "<leader>hq", gitsigns.setqflist)
+      map("n", "<leader>oq", gitsigns.setqflist)
 
       -- Toggles
       map("n", "<leader>tb", gitsigns.toggle_current_line_blame)
