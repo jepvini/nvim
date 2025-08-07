@@ -45,33 +45,33 @@ return {
       end)
 
       -- Actions
-      map("n", "<leader>hs", gitsigns.stage_hunk)
-      map("n", "<leader>hr", gitsigns.reset_hunk)
+      map("n", "<leader>os", gitsigns.stage_hunk)
+      map("n", "<leader>or", gitsigns.reset_hunk)
 
-      map("v", "<leader>hs", function()
+      map("v", "<leader>os", function()
         gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
       end)
 
-      map("v", "<leader>hr", function()
+      map("v", "<leader>or", function()
         gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
       end)
 
-      map("n", "<leader>hS", gitsigns.stage_buffer)
-      map("n", "<leader>hR", gitsigns.reset_buffer)
-      map("n", "<leader>hp", gitsigns.preview_hunk)
-      map("n", "<leader>hi", gitsigns.preview_hunk_inline)
+      map("n", "<leader>oS", gitsigns.stage_buffer)
+      map("n", "<leader>oR", gitsigns.reset_buffer)
+      map("n", "<leader>op", gitsigns.preview_hunk)
+      map("n", "<leader>oi", gitsigns.preview_hunk_inline)
 
-      map("n", "<leader>hb", function()
+      map("n", "<leader>ob", function()
         gitsigns.blame_line({ full = true })
       end)
 
-      map("n", "<leader>hd", gitsigns.diffthis)
+      map("n", "<leader>od", gitsigns.diffthis)
 
-      map("n", "<leader>hD", function()
+      map("n", "<leader>oD", function()
         gitsigns.diffthis("~")
       end)
 
-      map("n", "<leader>hQ", function()
+      map("n", "<leader>oQ", function()
         gitsigns.setqflist("all")
       end)
       map("n", "<leader>hq", gitsigns.setqflist)
