@@ -38,19 +38,24 @@ return {
           },
         },
         icons_enabled = true,
-        component_separators = { left = "", right = "" },
-        section_separators = { left = "", right = "" },
+        component_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
         disabled_filetypes = {
           statusline = { "NvimTree" },
         },
       },
 
       sections = {
-        lualine_x = {
+        lualine_c = {
+          "filename",
           {
-            require("lazy.status").updates,
-            cond = require("lazy.status").has_updates,
-            color = { fg = "#ff9e64" },
+            "harpoon2",
+            icon = "",
+            color_active = { fg = "#a6e3a1" },
+            indicators = { "1", "2", "3", "4", "5" },
+            active_indicators = { "1", "2", "3", "4", "5" },
+            _separator = " ",
+            no_harpoon = " ",
           },
         },
       },

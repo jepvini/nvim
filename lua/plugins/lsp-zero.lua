@@ -8,6 +8,7 @@ return {
       "hrsh7th/cmp-path",
       "onsails/lspkind.nvim",
       "uga-rosa/cmp-dictionary",
+      "hrsh7th/cmp-nvim-lsp",
       {
         "L3MON4D3/LuaSnip",
         dependencies = { "rafamadriz/friendly-snippets" },
@@ -103,9 +104,6 @@ return {
     "neovim/nvim-lspconfig",
     cmd = "LspInfo",
     event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-      { "hrsh7th/cmp-nvim-lsp" },
-    },
     init = function()
       -- Reserve a space in the gutter
       -- This will avoid an annoying layout shift in the screen

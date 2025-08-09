@@ -22,8 +22,8 @@ return {
         -- custom mappings
         vim.keymap.set("n", "<C-t>", api.tree.change_root_to_parent, opts("Up"))
         vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
-        vim.keymap.set("n", "<CR>", api.node.open.tab, opts("Expand folder or go to file"))
-        vim.keymap.set("n", "L", api.node.open.tab, opts("Expand folder or go to file"))
+        vim.keymap.set("n", "<CR>", api.node.open.edit, opts("Expand folder or go to file"))
+        vim.keymap.set("n", "L", api.node.open.edit, opts("Expand folder or go to file"))
         vim.keymap.set("n", "H", api.node.navigate.parent_close, opts("Close parent folder"))
         vim.keymap.set("n", "gh", api.tree.toggle_hidden_filter, opts("Toggle hiddem files"))
       end

@@ -11,10 +11,14 @@ return {
       css = {
         names = false,
         RRGGBBAA = true,
+        rgba = true,
+        rgb = true,
       },
       scss = {
         names = false,
         RRGGBBAA = true,
+        rgba = true,
+        rgb = true,
       },
     },
   },

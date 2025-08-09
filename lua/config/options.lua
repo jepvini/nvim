@@ -39,7 +39,7 @@ vim.opt.shiftwidth = 2
 -- Tabs are spaces
 vim.opt.expandtab = true
 
--- Disable autocomment prssing on new line
+-- Disable autocomment pressing on new line
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 
 -- always have min 8 lines from cursor and end of screen
@@ -68,3 +68,16 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.pumheight = 5
 
 vim.opt.showmode = false
+
+vim.diagnostic.enable = true
+vim.diagnostic.config({
+  underline = false,
+  signs = true,
+  severity_sort = true,
+  update_in_insert = false,
+  virtual_lines = true,
+})
+
+-- Fix trasparency
+-- vim.o.pumblend = 0
+-- vim.o.winblend = 0

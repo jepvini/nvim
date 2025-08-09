@@ -1,4 +1,6 @@
 return {
-  "elkowar/yuck.vim",
-  event = "VeryLazy",
+  {
+    "elkowar/yuck.vim",
+    event = "VeryLazy",
+  },
 }
