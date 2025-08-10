@@ -46,8 +46,10 @@ return {
       },
 
       sections = {
-        lualine_c = {
-          "filename",
+        lualine_a = { "mode" },
+        lualine_b = { "buffers", "branch", "diagnostics" },
+        lualine_c = {},
+        lualine_x = {
           {
             "harpoon2",
             icon = "",
@@ -58,6 +60,8 @@ return {
             no_harpoon = " ",
           },
         },
+        lualine_y = { "progress" },
+        lualine_z = { "location" },
       },
     },
   },

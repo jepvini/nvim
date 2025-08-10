@@ -12,7 +12,7 @@ vim.g.maplocalleader = " "
 vim.keymap.set({ "i" }, "jk", "<esc>")
 
 -- Quit file
-vim.keymap.set("n", "<leader>q", "<cmd>exit<cr>")
+-- vim.keymap.set("n", "<leader>q", "<cmd>:bd<cr>")
 
 -- Move half page
 vim.keymap.set({ "n", "v" }, "J", "<C-d>zz")
@@ -60,8 +60,16 @@ vim.keymap.set("v", "<Down>", "<nop>")
 vim.keymap.set("n", "<leader>U", "viWo<esc>vU")
 vim.keymap.set("n", "<leader>u", "viWo<esc>vu")
 
--- Persistence
-vim.keymap.set("n", "<leader>ws", function() require("persistence").load() end)
-vim.keymap.set("n", "<leader>we", function() require("persistence").select() end)
-vim.keymap.set("n", "<leader>ww", function() require("persistence").load({ last = true }) end)
-vim.keymap.set("n", "<leader>wd", function() require("persistence").stop() end)
+-- Move in buffers
+vim.keymap.set("n", "<leader>.", "<cmd>bnext<cr>")
+vim.keymap.set("n", "<leader>,", "<cmd>bprevious<cr>")
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>do",
+  "<cmd>lua vim.diagnostic.open_float()<CR>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap("n", "<leader>d[", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>d]", "<cmd>lua vim.diagnostic.goto_next()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", { noremap = true, silent = true })

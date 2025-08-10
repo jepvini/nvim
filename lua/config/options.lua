@@ -71,13 +71,21 @@ vim.opt.showmode = false
 
 vim.diagnostic.enable = true
 vim.diagnostic.config({
-  underline = false,
-  signs = true,
+  --   underline = false,
+  --   signs = true,
+  --   severity_sort = true,
+  --   update_in_insert = false,
+  --   virtual_lines = true,
+  virtual_text = {
+    -- source = "always",  -- Or "if_many"
+    prefix = "●", -- Could be '■', '▎', 'x'
+  },
   severity_sort = true,
-  update_in_insert = false,
-  virtual_lines = true,
+  float = {
+    source = "always", -- Or "if_many"
+  },
 })
 
--- Fix trasparency
+-- Fix transparency
 -- vim.o.pumblend = 0
 -- vim.o.winblend = 0

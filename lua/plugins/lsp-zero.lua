@@ -142,7 +142,7 @@ return {
       local lspconfig = require("lspconfig")
 
       lspconfig.bashls.setup({
-        capabilities = capabilities,
+        capabilities = apabilities,
         on_attach = on_attach,
       })
       lspconfig.clangd.setup({
@@ -153,6 +153,7 @@ return {
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
         on_attach = on_attach,
+
         single_file_support = true,
         settings = {
           Lua = {
